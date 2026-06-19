@@ -10,16 +10,17 @@
 
         <div class="mb-4">
             <x-ui::label for="name" value="Név" />
-            <x-ui::input type="text" name="name" id="name" :value="old('name')" required
-                :class="$errors->has('name') ? 'border-red-500' : ''" />
+            <x-ui::input type="text" name="name" id="name" :value="old('name')" required />
+            <x-ui::field-error name="name" />
         </div>
 
         <x-ui::email-field id="email" label="E-mail" :value="old('email')" required />
+        <x-ui::field-error name="email" />
 
         <div class="mb-6">
             <x-ui::label for="message" value="Üzenet" />
-            <x-ui::textarea name="message" id="message" required
-                :class="$errors->has('message') ? 'border-red-500' : ''">{{ old('message') }}</x-ui::textarea>
+            <x-ui::textarea name="message" id="message" required>{{ old('message') }}</x-ui::textarea>
+            <x-ui::field-error name="message" />
         </div>
 
         <x-ui::submit-button>Küldés</x-ui::submit-button>

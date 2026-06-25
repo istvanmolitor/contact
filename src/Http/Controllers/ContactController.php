@@ -9,7 +9,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return view('contact::contact');
+        return template('contact::contact');
     }
 
     public function submit(Request $request)

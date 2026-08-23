@@ -9,7 +9,7 @@ A Molitor Contact egy egyszerű publikus kapcsolatfelvételi (kontakt) űrlapot 
 ## Előfeltételek
 
 - Laravel alkalmazás
-- Egy `theme::` néven regisztrált nézet-névtér (view namespace), amely biztosítja a `theme::layouts.centered` layoutot, valamint egy `ui::` néven regisztrált komponenskészlet (`x-ui::form`, `x-ui::input-field`, `x-ui::email-field`, `x-ui::textarea-field`, `x-ui::submit-button`, `x-ui::success-message`), mert a csomag saját nézete (`resources/views/contact.blade.php`) ezekre épül. Ezt jellemzik a Molitor projekt téma-/UI-csomagjai (pl. `theme` és `blade-ui`); ha ezek nincsenek telepítve, a `contact::layouts.app` nézetet (vagy a `contact.blade.php`-t) publikálás után saját layoutra/komponensekre kell cserélni.
+- Az `istvanmolitor/blade-ui` csomag, amely biztosítja a `blade-ui::layouts.centered` layoutot, valamint a `ui::` néven regisztrált komponenskészletet (`x-ui::form.form`, `x-ui::form.fields.input`, `x-ui::form.fields.email`, `x-ui::form.fields.textarea`, `x-ui::buttons.primary-button`), mert a csomag saját nézete (`resources/views/contact.blade.php`) ezekre épül. Ha a `blade-ui` csomag nincs telepítve, a `contact::layouts.app` nézetet (vagy a `contact.blade.php`-t) publikálás után saját layoutra/komponensekre kell cserélni.
 
 ## Telepítés
 
@@ -59,7 +59,7 @@ A route-ok a `web` middleware csoportban vannak regisztrálva.
 
 ## Használat
 
-Az oldal a `contact::contact` nézetet jeleníti meg (`resources/views/contact.blade.php`), amely a `contact::layouts.app` layoutot használja (`@extends('theme::layouts.centered')`).
+Az oldal a `contact::contact` nézetet jeleníti meg (`resources/views/contact.blade.php`), amely a `contact::layouts.app` layoutot használja (`@extends('blade-ui::layouts.centered')`).
 
 A `submit` action a következő szabályok szerint validál:
 

@@ -5,12 +5,10 @@
 @endsection
 
 @section('content')
-    <x-ui::success-message />
-
-    <x-ui::form action="{{ route('contact.submit') }}">
-        <x-ui::input-field name="name" label="Név" />
-        <x-ui::email-field name="email" label="E-mail" :value="auth()->user()?->email" />
-        <x-ui::textarea-field name="message" label="Üzenet" />
-        <x-ui::submit-button>Küldés</x-ui::submit-button>
-    </x-ui::form>
+    <x-ui::form.form action="{{ route('contact.submit') }}">
+        <x-ui::form.fields.input name="name" label="Név" />
+        <x-ui::form.fields.email id="email" label="E-mail" :value="auth()->user()?->email" />
+        <x-ui::form.fields.textarea name="message" label="Üzenet" />
+        <x-ui::buttons.primary-button type="submit">Küldés</x-ui::buttons.primary-button>
+    </x-ui::form.form>
 @endsection

@@ -1,1 +1,1 @@
-@extends('theme::layouts.centered')
+@extends('blade-ui::layouts.centered')
